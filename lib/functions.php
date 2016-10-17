@@ -15,7 +15,13 @@ class Functions
 	 */
 	public static function sayReply ($ph, $level = 0, $replyto='')
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		sayReply($ph, $level, $replyto);
 	}
 
@@ -28,7 +34,13 @@ class Functions
 	 */
 	public static function sayTo ($ph, $level = 0, $destination = '')
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		sayTo($ph,$level,$destination);
 	}
 
@@ -42,7 +54,13 @@ class Functions
 	 */
 	public static function say ($ph, $level = 0, $member_id = 0, $source = '')
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		say($ph, $level, $member_id,$source);
 	}
 
@@ -53,7 +71,13 @@ class Functions
 	 */
 	public static function processCommand ($command)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		processCommand($command);
 	}
 
@@ -91,7 +115,13 @@ class Functions
 	 */
 	public static function timeNow($tm = 0)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return timeNow($tm);
 	}
 
@@ -200,7 +230,13 @@ class Functions
 	 */
 	public static function addScheduledJob($title, $commands, $datetime, $expire = 60)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return addScheduledJob($title, $commands, $datetime, $expire);
 	}
 
@@ -211,7 +247,13 @@ class Functions
 	 */
 	public static function clearScheduledJob($title)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		clearScheduledJob($title);
 	}
 
@@ -222,7 +264,13 @@ class Functions
 	 */
 	public static function deleteScheduledJob($id)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		deleteScheduledJob($id);
 	}
 
@@ -235,7 +283,13 @@ class Functions
 	 */
 	public static function setTimeOut($title, $commands, $timeout)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return setTimeOut($title, $commands, $timeout);
 	}
 
@@ -256,7 +310,13 @@ class Functions
 	 */
 	public static function timeOutExists($title)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return timeOutExists($title);
 	}
 
@@ -266,7 +326,13 @@ class Functions
 	 */
 	public static function runScheduledJobs()
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		runScheduledJobs();
 	}
 
@@ -288,7 +354,13 @@ class Functions
 	 */
 	public static function recognizeTime($text, &$newText)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return recognizeTime($text, $newText);
 	}
 
@@ -301,7 +373,13 @@ class Functions
 	 */
 	public static function registerEvent($eventName, $details = '', $expire_in = 365)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return registerEvent($eventName, $details, $expire_in);
 	}
 
@@ -312,7 +390,13 @@ class Functions
 	 */
 	public static function registeredEventTime($eventName)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return registeredEventTime($eventName);
 	}
 
@@ -323,7 +407,13 @@ class Functions
 	 */
 	public static function getRandomLine($filename)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return getRandomLine($filename);
 	}
 
@@ -336,7 +426,13 @@ class Functions
 	 */
 	public static function playSound($filename, $exclusive = 0, $priority = 0)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		playSound($filename, $exclusive, $priority);
 	}
 
@@ -348,7 +444,13 @@ class Functions
 	 */
 	public static function playMedia($path, $host = 'localhost')
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return playMedia($path, $host);
 	}
 
@@ -360,7 +462,13 @@ class Functions
 	 */
 	public static function runScript($id, $params = '')
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return runScript($id, $params);
 	}
 
@@ -385,7 +493,13 @@ class Functions
 	 */
 	public static function getURL($url, $cache = 0, $username = '', $password = '')
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return getURL($url, $cache, $username, $password);
 	}
 
@@ -398,7 +512,13 @@ class Functions
 	 */
 	public static function safe_exec($command, $exclusive = 0, $priority = 0)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return safe_exec($command, $exclusive, $priority);
 	}
 
@@ -409,7 +529,13 @@ class Functions
 	 */
 	public static function execInBackground($cmd)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		execInBackground($cmd);
 	}
 
@@ -421,7 +547,13 @@ class Functions
 	 */
 	public static function getFilesTree($destination, $sort = 'name')
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return getFilesTree($destination, $sort);
 	}
 
@@ -432,7 +564,13 @@ class Functions
 	 */
 	public static function isOnline ($host)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return isOnline ($host);
 	}
 
@@ -444,7 +582,13 @@ class Functions
 	 */
 	public static function checkAccess($object_type, $object_id)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return checkAccess($object_type, $object_id);
 	}
 
@@ -456,7 +600,13 @@ class Functions
 	 */
 	public static function registerError($code = 'custom', $details = '')
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		registerError($code, $details);
 	}
 
@@ -466,7 +616,13 @@ class Functions
 	 */
 	public static function IsWindowsOS()
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return IsWindowsOS();
 	}
 
@@ -477,7 +633,13 @@ class Functions
 	 */
 	public static function makePayload($data)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return makePayload($data);
 	}
 
@@ -488,7 +650,13 @@ class Functions
 	 */
 	public static function HexStringToArray($buf)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return HexStringToArray($buf);
 	}
 
@@ -499,7 +667,13 @@ class Functions
 	 */
 	public static function HexStringToString($buf)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return HexStringToString($buf);
 	}
 
@@ -510,7 +684,13 @@ class Functions
 	 */
 	public static function binaryToString($buf)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return binaryToString($buf);
 	}
 
@@ -520,7 +700,13 @@ class Functions
 	 */
 	public static function return_memory_usage()
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/common.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return return_memory_usage();
 	}
 
@@ -535,7 +721,13 @@ class Functions
 	 */
 	public static function SendMail($from, $to, $subj, $body, $attach = "")
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/general.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return SendMail($from, $to, $subj, $body, $attach);
 	}
 
@@ -550,7 +742,13 @@ class Functions
 	 */
 	public static function SendMail_HTML($from, $to, $subj, $body, $attach = "")
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/general.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return SendMail_HTML($from, $to, $subj, $body, $attach);
 	}
 
@@ -562,7 +760,13 @@ class Functions
 	 */
 	public static function DebMes($errorMessage, $logLevel = "debug")
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/general.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		DebMes($errorMessage, $logLevel);
 	}
 
@@ -574,7 +778,13 @@ class Functions
 	 */
 	public static function addClass($class_name, $parent_class = '')
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/objects.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return addClass($class_name, $parent_class);
 	}
 
@@ -587,7 +797,13 @@ class Functions
 	 */
 	public static function addClassMethod($class_name, $method_name, $code = '')
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/objects.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return addClassMethod($class_name, $method_name, $code);
 	}
 
@@ -600,7 +816,13 @@ class Functions
 	 */
 	public static function addClassProperty($class_name, $property_name, $keep_history = 0)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/objects.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return addClassProperty($class_name, $property_name, $keep_history);
 	}
 
@@ -612,7 +834,13 @@ class Functions
 	 */
 	public static function addClassObject($class_name, $object_name)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/objects.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return addClassObject($class_name, $object_name);
 	}
 
@@ -624,7 +852,13 @@ class Functions
 	 */
 	public static function getValueIdByName($object_name, $property)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/objects.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return getValueIdByName($object_name, $property);
 	}
 
@@ -637,7 +871,13 @@ class Functions
 	 */
 	public static function addLinkedProperty($object, $property, $module)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/objects.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return addLinkedProperty($object, $property, $module);
 	}
 
@@ -650,7 +890,13 @@ class Functions
 	 */
 	public static function removeLinkedProperty($object, $property, $module)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/objects.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return removeLinkedProperty($object, $property, $module);
 	}
 
@@ -662,7 +908,13 @@ class Functions
 	 */
 	public static function getObject($name)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/objects.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return getObject($name);
 	}
 
@@ -673,7 +925,13 @@ class Functions
 	 */
 	public static function getObjectsByClass($class_name)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/objects.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return getObjectsByClass($class_name);
 	}
 
@@ -684,7 +942,13 @@ class Functions
 	 */
 	public static function getGlobal($varname)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/objects.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return getGlobal($varname);
 	}
 
@@ -697,7 +961,13 @@ class Functions
 	 */
 	public static function getHistoryValueId($varname)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/objects.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return getHistoryValueId($varname);
 	}
 
@@ -710,7 +980,13 @@ class Functions
 	 */
 	public static function getHistory($varname, $start_time, $stop_time = 0)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/objects.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return getHistory($varname, $start_time, $stop_time);
 	}
 
@@ -723,7 +999,13 @@ class Functions
 	 */
 	public static function getHistoryMin($varname, $start_time, $stop_time = 0)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/objects.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return getHistoryMin($varname, $start_time, $stop_time);
 	}
 
@@ -736,7 +1018,13 @@ class Functions
 	 */
 	public static function getHistoryMax($varname, $start_time, $stop_time = 0)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/objects.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return getHistoryMax($varname, $start_time, $stop_time);
 	}
 
@@ -749,7 +1037,13 @@ class Functions
 	 */
 	public static function getHistoryCount($varname, $start_time, $stop_time = 0)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/objects.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return getHistoryCount($varname, $start_time, $stop_time);
 	}
 
@@ -762,7 +1056,13 @@ class Functions
 	 */
 	public static function getHistorySum($varname, $start_time, $stop_time = 0)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/objects.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return getHistorySum($varname, $start_time, $stop_time);
 	}
 
@@ -775,7 +1075,13 @@ class Functions
 	 */
 	public static function getHistoryAvg($varname, $start_time, $stop_time = 0)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/objects.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return getHistoryAvg($varname, $start_time, $stop_time);
 	}
 
@@ -788,7 +1094,13 @@ class Functions
 	 */
 	public static function getHistoryValue($varname, $time, $nerest = false)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/objects.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return getHistoryValue($varname, $time, $nerest);
 	}
 
@@ -801,7 +1113,13 @@ class Functions
 	 */
 	public static function setGlobal($varname, $value, $no_linked = 0)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/objects.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return setGlobal($varname, $value, $no_linked);
 	}
 
@@ -813,7 +1131,13 @@ class Functions
 	 */
 	public static function callMethod($method_name, $params = 0)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/objects.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return callMethod($method_name, $params);
 	}
 
@@ -825,7 +1149,13 @@ class Functions
 	 */
 	public static function processTitle($title, $object = 0)
 	{
-		include_once(Config::getConfig("DOCUMENT_ROOT") . 'lib/objects.class.php');
+		chdir(Config::getConfig("DOCUMENT_ROOT"));
+		include_once("./config.php");
+		include_once("./lib/loader.php");
+		include_once("./lib/threads.php");
+		$db = new \mysql(DB_HOST, '', DB_USER, DB_PASSWORD, DB_NAME);
+		$GLOBALS['db'] = $db;
+		include_once("./load_settings.php");
 		return processTitle($title, $object);
 	}
 
